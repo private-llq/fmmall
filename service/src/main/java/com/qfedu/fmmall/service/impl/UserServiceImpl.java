@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
         Example example = new Example(Users.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andEqualTo("username", name);
-        List<Users> users = usersMapper.selectByExample(example);
+        List<Users> users = this.usersMapper.selectByExample(example);
 
         if(users.size() == 0){
             return new ResultVO(ResStatus.NO,"登录失败，用户名不存在！",null);

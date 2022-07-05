@@ -125,11 +125,12 @@ GET http://localhost:9094/content/track/info/1534878014349533185
 GET http://localhost:9094/content/track/page?userId=00A00000020&subjectType=0
 
 
-###
-GET http://localhost:8080/user/login?username=1&password=1
+###登录
+GET http://localhost:8080/user/login?username=123&password=123
 
 
-
+###轮播图
+GET http://localhost:8080/index/indeximg
 
 
 
