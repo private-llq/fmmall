@@ -1,0 +1,158 @@
+
+###
+POST http://localhost:9094/content/activity/save
+Content-Type: application/json
+
+{
+  "activityName": "张山",
+  "activityType": 1,
+  "isTiming": 1,
+  "timingDateTime": "2022-05-31 09:31:33",
+  "startDateTime": "2022-05-31 10:31:33",
+  "endDateTime": "2022-06-31 10:31:33",
+  "wechatImgUrl": "http://localhost:9094/content/banner/info/1529707850129145858",
+  "wechatInfo": "这是一个活动",
+  "coverImgUrl": "http://localhost:9094/content/banner/info/1529707850129145858",
+  "content": "牛马"
+}
+###
+GET http://localhost:9094/content/activity/info/1531571210533699585
+
+
+
+###
+POST http://localhost:9201/api/content/activity/update
+Content-Type: application/json
+token: eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImFjMWE5YWY4LWE3YjgtNDk2OC1hM2YwLTgzYjM2MmVmZmY5ZiJ9.FLjHUfR8nuG_SP5GZcgOa8mh1uwBpXpGp8WoB9FZBAn0hXBaJUlvI3-oBWEtF7VmDBypgIxhiTtf7LfoYP0pNw
+
+{
+  "activityId": "1531571461571182593",
+  "activityName": "张山",
+  "activityType": 1,
+  "isTiming": 0,
+  "dealers": [26,27],
+  "timingDateTime": "2022-05-31 09:31:33",
+  "startDateTime": "2022-05-31 10:31:33",
+  "endDateTime": "2022-06-31 10:31:33",
+  "wechatImgUrl": "http://localhost:9094/content/banner/info/1529707850129145858",
+  "wechatInfo": "这是一个活动",
+  "coverImgUrl": "http://localhost:9094/content/banner/info/1529707850129145858",
+  "content": "牛马"
+}
+###
+###
+POST http://localhost:9094/content/activity/open
+Content-Type: application/json
+
+{
+  "activityId": "1531571461571182593",
+  "status": 0
+}
+
+###
+POST http://localhost:9094/content/activity/sort
+Content-Type: application/json
+
+{
+  "activityId": "1531571461571182593",
+  "sort": 100
+}
+
+###
+POST http://localhost:9094/content/activity/delete
+Content-Type: application/json
+
+{
+"activityId": "1531571461571182593"
+}
+
+###
+GET http://localhost:9094/content/activity/page
+
+###
+GET http://localhost:9094/content/activity/appPage?activityStatus=2
+
+
+### 报名
+POST http://localhost:9094/content/activity/apply/apply
+Content-Type: application/json
+
+{
+  "activityId": "1531570982552305665",
+  "userId": "124314",
+  "cityName":"重庆",
+  "phone": "13796035864",
+  "userName": "罗马",
+  "storeName": "三号门店",
+  "storeId": "12341"
+}
+
+###
+GET http://localhost:9094/content/activity/apply/page
+token: eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImYyZDY5YTFkLWVhYjgtNDVhOC04NzYyLWRmMjY5ZDdmOWE3YiJ9.Fed8od3KaPjidLG1l9vFAwPysnySiBQ-t3qi8M5z-iAOE2JVrZCYt5tmcGS1STYV-8hyHIf4I2TagKT33A5HGg
+
+###
+GET http://localhost:9094/content/activity/apply/verify?userId=1
+
+
+### 验证
+POST http://localhost:9094/content/activity/apply/verify
+Content-Type: application/json
+
+{
+  "activityId": "1531570982552305665",
+  "userId": "124314"
+}
+
+###
+GET http://localhost:9094/content/activity/apply/excel/1531570982552305665
+
+###用户浏览记录
+POST http://localhost:9094/content/track/save
+Content-Type: application/json
+
+{
+  "userId": "00A00000020",
+  "userName": "罗马柱",
+  "userMobile":"13890134",
+  "subjectId": "1531571210533699585",
+  "userName": "罗马",
+  "subjectType": "1",
+  "type": "5"
+}
+
+###
+GET http://localhost:9094/content/track/info/1534878014349533185
+
+###
+GET http://localhost:9094/content/track/page?userId=00A00000020&subjectType=0
+
+
+###阿里云检查
+GET http://localhost:9094/content/aliyuncontent/getCheck?content=冰毒买卖是违法的
+
+
+
+
+
+###用户浏览记录
+POST http://localhost:9201/api/content/aliyuncontent/getCheck
+Content-Type: application/json
+
+{
+  "userId": "00A00000020",
+  "userName": "罗马柱",
+  "userMobile":"13890134",
+  "subjectId": "1531571210533699585",
+  "userName": "罗马",
+  "subjectType": "1",
+  "type": "5"
+}
+
+
+
+
+
+
+
+
