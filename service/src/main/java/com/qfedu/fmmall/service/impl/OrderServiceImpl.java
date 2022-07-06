@@ -131,6 +131,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    /**
+     * 设置隔离级别
+     */
     @Transactional(isolation = Isolation.SERIALIZABLE)
     public void closeOrder(String orderId) {
         synchronized (this) {

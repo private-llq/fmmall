@@ -32,11 +32,19 @@ public interface OrderService {
     public ResultVO getOrderById(String orderId);
 
     /**
-     *
+     * 关闭订单
      * @param orderId
      */
     public void closeOrder(String orderId);
 
+    /**
+     * 分页查询订单
+     * @param userId
+     * @param status
+     * @param pageNum
+     * @param limit
+     * @return
+     */
     public ResultVO listOrders(String userId,String status,int pageNum, int limit);
 
 }
