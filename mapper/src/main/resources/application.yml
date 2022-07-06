@@ -12,3 +12,7 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+#swagger的提示
+logging:
+  level:
+    io.swagger.models.parameters.AbstractSerializableParameter: error
