@@ -10,10 +10,20 @@ import java.util.List;
 
 @Repository
 public interface OrdersMapper extends GeneralDAO<Orders> {
-
+    /**
+     *  分页查询订单
+     * @param userId
+     * @param status
+     * @param start
+     * @param limit
+     * @return
+     */
     public List<OrdersVO> selectOrders(@Param("userId") String userId,
                                        @Param("status") String status,
                                        @Param("start") int start,
                                        @Param("limit") int limit);
+
+
+
 
 }
