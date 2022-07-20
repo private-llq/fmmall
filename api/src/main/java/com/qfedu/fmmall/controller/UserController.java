@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
+/**
+ * @author liulq
+ */
 @RestController
 @RequestMapping("/user")
 @Api(value = "提供用户的登录和注册接口",tags = "用户管理")
