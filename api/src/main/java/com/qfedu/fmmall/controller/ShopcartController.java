@@ -1,10 +1,14 @@
 package com.qfedu.fmmall.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qfedu.fmmall.entity.ShoppingCart;
+import com.qfedu.fmmall.entity.Users;
 import com.qfedu.fmmall.service.ShoppingCartService;
 import com.qfedu.fmmall.vo.ResultVO;
 import io.swagger.annotations.ApiImplicitParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -20,11 +24,18 @@ public class ShopcartController {
 
    @Autowired
    private ShoppingCartService shoppingCartService;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+    @Autowired
+    private ObjectMapper objectMapper;
 
 
     @PostMapping("/add")
-    public ResultVO addShoppingCart(@RequestBody ShoppingCart cart, @RequestHeader("token")String token){
+    public ResultVO addShoppingCart(@RequestBody ShoppingCart cart, @RequestHeader("token")String token) throws JsonProcessingException {
         ResultVO resultVO = shoppingCartService.addShoppingCart(cart);
+        String s = stringRedisTemplate.boundValueOps(token).get();
+        Users users = objectMapper.readValue(s, Users.class);
+        System.out.println(users);
         return resultVO;
     }
 

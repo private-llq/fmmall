@@ -66,7 +66,7 @@ public class OrderServiceImpl implements OrderService {
             untitled = untitled+sc.getProductName()+",";
         }
         if(f){
-            //表示库存充足----保存订单  前端传入的参数：
+//表示库存充足----保存订单  前端传入的参数：
 //            userid
 //            untitled
 //            收货人信息：姓名、电话、地址
